@@ -1,9 +1,21 @@
 {
-    "name" : "GigTrack",
+    "name": "GigTrack",
     "version": "1.0.0",
-    "manifest_version" : 3,
+    "manifest_version": 3,
+    "permissions": [
+        "tabs"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
 
     "action": {
-        "default_popup": "popup.html"
-    }
+        "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches":["https://www.linkedin.com/*"],
+            "js": ["content/content.js"]
+        }
+    ]
 }
